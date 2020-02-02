@@ -10,12 +10,24 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.function.Predicate;
 
 @Component
 public class EmployeeCRUDBoImpl implements EmployeeCRUDBoIfc {
 
     private static Logger log = LoggerFactory.getLogger(EmployeeCRUDBoImpl.class);
+
+    @PostConstruct
+    public void postConstruct() {
+        log.info("PostConstruct called.");
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        log.info("PreDestroy called.");
+    }
 
     @Autowired
     private EmployeeDao empDao;
@@ -113,4 +125,5 @@ public class EmployeeCRUDBoImpl implements EmployeeCRUDBoIfc {
     public EmployeeDao getEmpDao() {
         return empDao;
     }
+
 }

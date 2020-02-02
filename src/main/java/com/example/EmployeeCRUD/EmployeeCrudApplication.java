@@ -20,13 +20,8 @@ public class EmployeeCrudApplication {
 
 		ApplicationContext applicationContext = SpringApplication.run(EmployeeCrudApplication.class, args);
 
-		EmployeeCRUDBoIfc empBo1 = applicationContext.getBean(EmployeeCRUDBoImpl.class);
+		EmployeeCRUDBoIfc empBo = applicationContext.getBean(EmployeeCRUDBoImpl.class);
 
-		EmployeeCRUDBoIfc empBo2 = applicationContext.getBean(EmployeeCRUDBoImpl.class);
-
-		log.info("Employee crud bean 1: {}", empBo1);
-		log.info("Employee dao bean 1: {}", empBo1.getEmpDao());
-		log.info("Employee crud bean 2: {}", empBo2);
-		log.info("Employee dao bean 2: {}", empBo2.getEmpDao());
+		log.info("Employee crud bean: {}", empBo);
 	}
 }
