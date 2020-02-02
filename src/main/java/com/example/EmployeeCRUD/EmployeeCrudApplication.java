@@ -20,21 +20,11 @@ public class EmployeeCrudApplication {
 
 		ApplicationContext applicationContext = SpringApplication.run(EmployeeCrudApplication.class, args);
 
-		EmployeeCRUDBoIfc empBo = applicationContext.getBean(EmployeeCRUDBoImpl.class);
+		EmployeeCRUDBoIfc empBo1 = applicationContext.getBean(EmployeeCRUDBoImpl.class);
 
-		// Create a new Employee
-		Employee e = new Employee("978465","MS Dhoni", "Ranchi");
-		empBo.create(e);
+		EmployeeCRUDBoIfc empBo2 = applicationContext.getBean(EmployeeCRUDBoImpl.class);
 
-		// Update employee details
-		e.setCity("Kolkata");
-		empBo.update(e);
-
-		// Display employee details
-		Employee emp = empBo.read("324561");
-		log.info("Employee details: {}", emp);
-
-		// Delete employee details
-		empBo.delete("624513");
+		log.info("Employee details: {}", empBo1);
+		log.info("Employee details: {}", empBo2);
 	}
 }
