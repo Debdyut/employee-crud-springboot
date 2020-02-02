@@ -1,6 +1,7 @@
 package com.example.EmployeeCRUD.bo;
 
 import com.example.EmployeeCRUD.dao.EmployeeDao;
+import com.example.EmployeeCRUD.dao.EmployeeDaoIfc;
 import com.example.EmployeeCRUD.model.Employee;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,18 +20,8 @@ public class EmployeeCRUDBoImpl implements EmployeeCRUDBoIfc {
 
     private static Logger log = LoggerFactory.getLogger(EmployeeCRUDBoImpl.class);
 
-    @PostConstruct
-    public void postConstruct() {
-        log.info("PostConstruct called.");
-    }
-
-    @PreDestroy
-    public void preDestroy() {
-        log.info("PreDestroy called.");
-    }
-
     @Autowired
-    private EmployeeDao empDao;
+    private EmployeeDaoIfc empDao;
 
     @Override
     public boolean create(Employee e) {
@@ -119,11 +110,6 @@ public class EmployeeCRUDBoImpl implements EmployeeCRUDBoIfc {
             log.error("Error retrieving employee with id {} : {}", employeeId, ex);
             return false;
         }
-    }
-
-    @Override
-    public EmployeeDao getEmpDao() {
-        return empDao;
     }
 
 }

@@ -13,6 +13,4 @@ public interface EmployeeCRUDBoIfc {
 
     boolean delete(String employeeId);
 
-    EmployeeDao getEmpDao();
-
 }

@@ -1,20 +1,17 @@
 package com.example.EmployeeCRUD.dao;
 
 import com.example.EmployeeCRUD.model.Employee;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class EmployeeDao implements EmployeeDaoIfc {
+public class EmployeeDaoNew implements EmployeeDaoIfc {
 
     private List<Employee> employeeList;
 
-    public EmployeeDao() {
+    public EmployeeDaoNew() {
         this.employeeList = populate();
     }
 
@@ -36,4 +33,5 @@ public class EmployeeDao implements EmployeeDaoIfc {
 
         return employeeList;
     }
+
 }
