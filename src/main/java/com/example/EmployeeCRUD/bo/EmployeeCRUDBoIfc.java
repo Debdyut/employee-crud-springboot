@@ -1,5 +1,6 @@
 package com.example.EmployeeCRUD.bo;
 
+import com.example.EmployeeCRUD.dao.EmployeeDao;
 import com.example.EmployeeCRUD.model.Employee;
 
 public interface EmployeeCRUDBoIfc {
@@ -11,5 +12,7 @@ public interface EmployeeCRUDBoIfc {
     boolean update(Employee e);
 
     boolean delete(String employeeId);
+
+    EmployeeDao getEmpDao();
 
 }

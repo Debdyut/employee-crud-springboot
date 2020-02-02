@@ -24,7 +24,9 @@ public class EmployeeCrudApplication {
 
 		EmployeeCRUDBoIfc empBo2 = applicationContext.getBean(EmployeeCRUDBoImpl.class);
 
-		log.info("Employee details: {}", empBo1);
-		log.info("Employee details: {}", empBo2);
+		log.info("Employee crud bean 1: {}", empBo1);
+		log.info("Employee dao bean 1: {}", empBo1.getEmpDao());
+		log.info("Employee crud bean 2: {}", empBo2);
+		log.info("Employee dao bean 2: {}", empBo2.getEmpDao());
 	}
 }
