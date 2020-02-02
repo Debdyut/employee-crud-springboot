@@ -4,6 +4,7 @@ import com.example.EmployeeCRUD.dao.EmployeeDao;
 import com.example.EmployeeCRUD.model.Employee;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 
@@ -11,15 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
+@Component
 public class EmployeeCRUDBoImpl implements EmployeeCRUDBoIfc {
 
     private static Logger log = LoggerFactory.getLogger(EmployeeCRUDBoImpl.class);
 
+    @Autowired
     private EmployeeDao empDao;
-
-    public EmployeeCRUDBoImpl() {
-        this.empDao = new EmployeeDao();
-    }
 
     @Override
     public boolean create(Employee e) {
